@@ -38,6 +38,10 @@ In `nginx-platform.conf` there is example config of my webserver **on host machi
 
 Nginx server handles TLS certificate, static files from `app/static/` and task static files from `${TASKS_DIR}/${TASK_NAME}/public/`.
 
+### Configuration
+
+All platform configuration is in `app/ctfboard/config.py`. You can find many useful (or not?) options there.
+
 ### Migrations
 
 You won't find any tables in fresh database. So please run migrations:
@@ -55,6 +59,10 @@ python3 app/manage.py createsuperuser
 ```
 
 Then sign in to `https://url.com/admin/`.
+
+### Tasks
+
+Task layout description is [here](TASKS.md)
 
 ## Questions?
 
