@@ -1,0 +1,13 @@
+version: '2'
+services:
+  host:
+    build: .
+    image: platform
+    volumes:
+      - ${PWD}/db.sqlite3:/app/db.sqlite3
+      - /home/ctf/tasks:/app/repo
+      - ${PWD}/boards:/app/boards
+    ports:
+      - "30000:8000"
+    restart: always
+

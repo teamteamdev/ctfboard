@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ugra CTF</title>
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+</head>
+<body><div class="sidebar">
+        <div class="basic-information">
+            <h2>{{ competition_name }}</h2>
+            <p><b>{{ team.name }}</b> · <a href="{% url "logout" %}">Выйти</a></p>
+            <p><b>{{ team.score }}</b> баллов · <b>{{ team.place }}</b> место</p>
+            <p class="your-place"></p>
+        </div>
+
+        <div class="scoreboard">
+            <h2>Лидеры</h2>
+            <div class="results-place">Загружаются..</div>
+        </div>
+
+        <div class="footer">
+            Copyright &copy; Ugra CTF Team, 2018
+        </div>
+    </div><div class="main-block {{ main_block_attr }}">{% block contents %}
+
+    {% endblock %}</div><script>
+        var scoreboard_path = "{{ scoreboard_path }}.json";
+    </script><script src="https://code.jquery.com/jquery-latest.min.js">
+    </script><script src="{% static "render_sidebar.js" %}"></script></body>
+</html>

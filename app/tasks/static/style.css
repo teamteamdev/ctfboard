@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background: #101113;
+    color: white;
+}
+
+.sidebar {
+    flex: 2;
+    padding: 2rem;
+}
+
+.main-block {
+    flex: 8;
+    padding: 1rem;
+}
+
+.main-block.main-block-task {
+    padding: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #1B75B9;
+}
+
+a:not(.task) {
+    border-bottom: 1px solid #1B75B9;
+}
+
+a:hover {
+    border-bottom: none;
+}
+
+.task {
+    display: inline-block;
+    margin: 1rem;
+    padding: 2rem;
+    background-color: #26292C;
+    min-width: 200px;
+    min-height: 200px;
+    box-sizing: border-box;
+    color: #929495;
+}
+
+.task .category {
+    font-size: 1.25rem;
+}
+
+.task .points {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.task .name {
+    padding-top: 1rem;
+}
+
+.task:hover {
+    background-color: white, rgba(146, 148, 149, 0.3), white;
+}
+
+.footer {
+    padding-top: 3rem;
+}
+
+.big-task {
+    background: #2c4019;
+    padding: 1rem;
+    border-radius: 3px;
+}
+
+input {
+    width: 100%;
+}
+
+button {
+    width: 200px;
+    float: right;
+    background-color: #3F502E;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid #1E2B11;
+    border-radius: 4px;
+    color: white;
+    padding: 10px!important;
+}
+
+.bottom-link {
+    padding-top: 1rem;
+}
+
+input, button {
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.team {
+    padding-bottom: 0.5rem;
+}
+
+.team-score {
+    float: right;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.task.solved {
+    background: #f76e1d;
+    color: white;
+}
+
+.task.solved:hover {
+    background: #F88D4D;
+}
+
+.big-task h2 {
+   font-weight: 400;
+   font-size: 3rem;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+.big-task input {
+   background: none;
+   box-shadow: none;
+   outline: none;
+   border: none;
+   border-bottom: 1px solid #7A876E;
+   color: white;
+}

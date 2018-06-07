@@ -1,0 +1,10 @@
+{% extends "page.html" %}
+{% block contents %}
+        {% for task in tasks %}
+        <a class="task{% if task.solved %} solved{% endif %}" href="/task/{{ task.short }}">
+            <div class="category">{{ task.category }}</div>
+            <div class="points">{{ task.points }}</div>
+            <div class="name">{{ task.name }}</div>
+        </a>
+        {% endfor %}
+{% endblock %}

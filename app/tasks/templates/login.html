@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ugra CTF</title>
+    <link rel="stylesheet" href="{% static "login.css" %}" />
+</head>
+<body>
+    <form method="POST" action="">
+        {% csrf_token %}
+        <img src="/boards/logo.svg" class="logo" />
+        <h2>Вход в систему</h2>
+        <p><input type="text" name="login" placeholder="Логин" /></p>
+        <p><input type="password" name="password" placeholder="Пароль" /></p>
+        <p><button>Войти</button></p>
+    </form>
+    <p class="copy">Copyright &copy; Ugra CTF Team, 2018</p>
+</body>
+</html>

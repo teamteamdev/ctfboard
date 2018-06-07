@@ -1,0 +1,34 @@
+{% extends "page.html" %}
+{% load format_ru %}
+{% load markdown %}
+{% block contents %}
+        <div class="big-task">
+            <p><a href="/">К списку заданий</a></p>
+            <h2 class="task-name">{{ task.name }}</h2>
+            <p class="meta">Автор: <b>{{ task.author }}</b> · {{ task.category }} · {{ task.points }} баллов</p>
+            {{ task.description|markdown|safe }}
+            {% if task.url %}
+            <p><a href="{{ task.url }}" target="_blank">Ссылка</a></p>
+            {% endif %}
+            
+            {% for attachment in task.attachments %}
+            <p>Файл: <a href="/files/{{ task.short }}/{{ attachment }}" target="_blank">{{ attachment }}</a></p>
+            {% endfor %}
+
+            <p class="meta">Правильных решений: {{ task.solutions }}</p>
+
+            {% if task.solved %}
+                <p style="color: darkgreen;"><b>Таск решен!</b></p>
+            {% else %}
+                {% if wrong %}
+                <p style="color: darkred;">Флаг неверен</p>
+                {% endif %}
+                <form method="POST" action="">
+                    {% csrf_token %}
+                    <p><input type="text" name="flag" placeholder="Ваш флаг" maxlength="60"/></p>
+                    <p><button>Сдать флаг</button></p>
+                </form>
+            {% endif %}
+            <p class="bottom-link"><a href="/">К списку заданий</a></p>
+        </div>
+{% endblock %}
