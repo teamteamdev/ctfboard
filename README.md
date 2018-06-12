@@ -1,12 +1,10 @@
 # CTFBoard Alpha
 
-Written by @nsychev at 5 AM
+* Author: [Nikita Sychev](https://github.com/nsychev)
+* Design advices by [Vanya Klimenko](https://github.com/vanyaklimenko)
+* License — [MIT](LICENSE)
 
-Design advices by @vanyaklimenko
-
-## License
-
-[GLWTPL?](https://github.com/me-shaon/GLWTPL/blob/master/LICENSE) :)
+This software is written at 5 AM on [April 21th, 2018](https://github.com/ugractf/ugractf-2018-quals). Design advices by @vanyaklimenko
 
 ## How to use
 
@@ -36,7 +34,7 @@ Why do we need first line? Otherwise, docker will think that `db.sqlite3` is nam
 
 In `nginx-platform.conf` there is example config of my webserver **on host machine** from Ugra CTF 2018. Also you can create docker container which will manage port 443 (or any other you want), but I don't prefer it because I serve many applications on the same server.
 
-Nginx server handles TLS certificate, static files from `app/static/` and task static files from `${TASKS_DIR}/${TASK_NAME}/public/`.
+Nginx server handles TLS certificate, serves static scoreboard, static files from `app/static/` and task static files from `${TASKS_DIR}/${TASK_NAME}/public/`.
 
 ### Configuration
 
@@ -62,8 +60,8 @@ Then sign in to `https://url.com/admin/`.
 
 ### Tasks
 
-Task layout description is [here](TASKS.md)
+Tasks are declarative. You need just to pull your GitHub repo with tasks and you're all set up.
 
-## Questions?
+Get acknowledged with [task layout description](TASKS.md).
 
-Feel free to ask me any questions about platform here: https://t.me/nsychev
+
